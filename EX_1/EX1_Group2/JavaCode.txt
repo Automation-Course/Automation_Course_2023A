@@ -1,0 +1,113 @@
+import java.util.Scanner;
+
+import java.math.*;
+public class Automation1 {
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		int num = 0;
+		while(true) {
+			boolean good = true;
+
+			System.out.println("please insert number"); 
+			String number = sc.nextLine();
+			if (checkNumber(number) == true) { 
+				if (number.equals("0")) num = 0; 
+				else {
+					num = Integer.parseInt(number);
+					}
+				
+				System.out.println("please insert your current base"); //the current base of the number
+				String strBase = sc.nextLine();
+				if (checkBase(strBase) == true) { //check the base is 2 or 10
+					int base = Integer.parseInt(strBase);
+
+					if (base == 2) {
+						for (int i = 0; i < number.length(); i++) { //make sure its only 0 and 1
+							if (number.charAt(i) < '0'|| number.charAt(i) > '1') {
+								good=false ;
+								System.out.println("only 0 and 1's please");
+								i=number.length();
+							}
+
+						}
+						if(good==true) {System.out.println("the answer is " + from2ToBase10(num, base));}
+						base=0;
+					}
+					if (base == 10) {
+						System.out.println("the answer is " + From10ToBase2(num));
+						base=0;
+					}
+				}	
+				else { System.out.println("wrong input, try again");
+				System.out.println();
+
+				}
+			}
+			else { System.out.println("wrong input, try again");
+			System.out.println();
+			}
+
+		}
+	}
+
+
+	public static boolean checkBase(String strBase) {
+		if (strBase.equals("2") || strBase.equals("10")) {
+			return true;
+		}
+		return false;
+	}
+
+
+	public static boolean checkNumber (String input) { //check the number contains only digits
+
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) < '0'|| input.charAt(i) > '9') {
+				return false;
+			} 
+		}
+		return true;
+	}
+
+
+
+	static public int from2ToBase10(int num, int base) { //transform the number from base 2 to base 10
+		int sol=0;
+		int exp=0;
+
+		while (num!=0) 
+		{
+			sol+=(num%10) * Math.pow(base,exp) ; //changing bases algorithm
+			num=num/10;
+			exp++;
+		}
+		return sol;
+	}
+
+
+	static public String From10ToBase2(int num) { //transform the number from base 10 to base 2
+		String sol="";
+		double remain=num;
+		int dig=1;
+		int flagNum=0;
+		while(num>Math.pow(2, flagNum+1)) {
+			flagNum++;
+		}
+		for(int i=flagNum; i>=0; i--) {
+			if(remain-(Math.pow(2, i))>=0) { 
+				remain= (remain-(Math.pow(2, i))) ;
+				sol+="1";
+
+			}
+			else {
+				sol+="0";
+			}
+
+		}
+
+		return sol;
+	}
+
+}

@@ -1,0 +1,91 @@
+
+	import java.util.Scanner;
+	import java.lang.Math;
+	
+public class work1 {
+
+	public class automation
+	{
+		Scanner sc=new Scanner(System.in);
+		private int calcType;
+		private String input;
+	//-------------------------------------------------------------	
+		public automation(int type, String input) {
+			this.calcType = type;
+			this.input = input;
+		}
+	//-------------------------------------------------------------	
+		public int getCalcType()
+		{
+			return this.calcType;
+		}
+
+		public static boolean checkInt(String s)
+		{
+			for (int i=0; i<s.length(); i++)
+			{
+				if ((s.charAt(i) <'0') || (s.charAt(i)>'9'))
+					return false;
+			}
+			return true;
+		}
+		//-----------------------------------------------------------
+		public static boolean checkBin (String num) {
+			for (int i =0; i<num.length(); i++)
+			{
+				if ((num.charAt(i) != '0') && (num.charAt(i)!='1'))
+					return false;
+			}
+			return true;
+		}
+		//-----------------------------------------------------------
+		public void binToDec() {
+			
+		}
+		//-----------------------------------------------------------
+		public static void main(String[] args) 
+		{
+			int ANS = getCalcType();
+			if (this. == 1) // BINARY TO DEC
+			{
+				int answer=0;
+				do
+				{
+					System.out.println("Please enter a positive binary number");
+					choice=sc.next();
+				}
+				while (checkBin(choice)==false);
+				for (int i=0;i<choice.length();i++)
+				{
+					int power = choice.length()-1-i;
+					int digit = Integer.parseInt(String.valueOf(choice.charAt(i)));
+					int temp = (int)Math.pow(2, power);
+					answer = answer + (digit*temp);				
+				}
+				System.out.println("decimal num is: "+answer);
+				main(args);
+			}
+			else // DEC TO BINARY
+			{
+				do
+				{
+					System.out.println("Please enter a positive decimal number");
+					choice=sc.next();				 
+				}
+				while (checkInt(choice)==false);
+				int dec=Integer.parseInt(choice);
+				String str2="";
+				while (dec!=0)
+				{
+					str2 = dec%2 + str2;
+					dec/=2;
+				}
+				System.out.println("binary num is: "+str2);
+				main(args);
+			}
+		}
+
+	}
+
+
+}

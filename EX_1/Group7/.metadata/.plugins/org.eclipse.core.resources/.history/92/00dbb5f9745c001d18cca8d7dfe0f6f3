@@ -1,0 +1,148 @@
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.TextField;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class DecToBin extends JFrame{
+
+	private JPanel contentPane;
+	private static JTextField textField_2;
+	private JTextField textField_3;
+
+	//----------------------------------------------------------------------
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					myGUI frame = new myGUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	//--------------------------------------------------------------------
+	public DecToBin() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JLabel lblNewLabel = new JLabel("Decimal to Binary Calulator!");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setBounds(86, 11, 263, 34);
+		contentPane.add(lblNewLabel);
+
+		JLabel lblNewLabel_3 = new JLabel("enter decimal number");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(30, 53, 173, 40);
+		contentPane.add(lblNewLabel_3);
+
+		JLabel lblNewLabel_4 = new JLabel("binary answer");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(30, 135, 173, 22);
+		contentPane.add(lblNewLabel_4);
+
+
+		textField_2 = new JTextField(); //decimal input
+		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_2.setText("");
+		textField_2.setBounds(286, 53, 173, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+
+		textField_3 = new JTextField(); //binary answer
+		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_3.setText("");
+		textField_3.setBounds(286, 135, 96, 20);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+
+		//-------------------------------------------------CALCLATION
+		JButton calculate = new JButton("Calculate");
+
+		calculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				String decInput = textField_2.getText();
+				
+				if(checkInt(decInput)==false)
+				{
+					JOptionPane.showMessageDialog(null, "Only positive numbers are allowed!");
+					DecToBin newFrame = new DecToBin();
+					newFrame.show();
+					dispose();
+				}
+				else
+				{
+				String ans = cal(decInput);
+				textField_3.setText(ans);
+				}
+
+			}
+		});
+
+		calculate.setFont(new Font("Tahoma", Font.BOLD, 12));
+		calculate.setForeground(new Color(0,0,128));
+		calculate.setBounds(62, 215, 89, 23);
+		contentPane.add(calculate);
+		//------------------------------------------------
+		JButton return1 = new JButton("Return");
+
+		return1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				myGUI gui = new myGUI();
+				gui.show();
+			}
+		});
+
+		return1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		return1.setForeground(new Color(0,0,128));
+		return1.setBounds(286, 215, 89, 23);
+		contentPane.add(return1);
+	}
+	//-------------------------------------------------------
+	public static String cal(String decInput) {
+
+
+		
+		int dec=Integer.parseInt(decInput);
+		String str2="";
+		while (dec!=0)
+		{
+			str2 = dec%2 + str2;
+			dec/=2;
+		}
+		return str2;
+	}
+	//-------------------------------------------------------
+	public static boolean checkInt(String s)
+	{
+		for (int i=0; i<s.length(); i++)
+		{
+			if ((s.charAt(i) <'0') || (s.charAt(i)>'9'))
+				return false;
+		}
+		return true;
+	}
+
+}

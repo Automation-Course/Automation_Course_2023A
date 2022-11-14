@@ -1,0 +1,7 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javax.swing.JFrame"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="javax.swing.WindowConstants"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="javax.accessibility.Accessible"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="javax.swing.RootPaneContainer"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="javax.swing.TransferHandler$HasGetTransferHandler"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.Frame"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.MenuContainer"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.Window"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.Container"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.Component"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="java.awt.image.ImageObserver"><rhs name\="DecToBin"/><rhs name\="BinToDec"/></lhs><lhs name\="DecToBin"><rhs name\="DecToBin"/></lhs><lhs name\="BinToDec"><rhs name\="BinToDec"/></lhs></history>
+content_assist_number_of_computers=13
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=21
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

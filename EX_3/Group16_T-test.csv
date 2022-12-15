@@ -1,0 +1,24 @@
+עוצמת אור חיישן,עוצמת אור חיישן בדיקה,
+500,510,
+400,400,
+300,301,
+200,188,
+100,104,
+80,76,
+60,64,
+40,38,
+15,13,
+5,4,
+t-Test: Two-Sample Assuming Equal Variances,,
+,עוצמת אור חיישן,עוצמת אור חיישן בדיקה
+Mean,170,169.8
+Variance,30316.66667,31115.73333
+Observations,10,10
+Pooled Variance,30716.2,
+Hypothesized Mean Difference,0,
+df,18,
+t Stat,0.00255171,
+P(T<=t) one-tail,0.49899605,
+t Critical one-tail,1.734063607,
+P(T<=t) two-tail,0.9979921,
+t Critical two-tail,2.10092204,

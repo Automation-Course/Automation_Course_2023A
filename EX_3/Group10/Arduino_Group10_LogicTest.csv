@@ -1,0 +1,15 @@
+﻿,1,2,3,4,5,6,,,,,
+זמן מצופה,90,90,45,45,45,45,,,t-Test: Two-Sample Assuming Equal Variances,,
+זמן בפועל,92,88,51,40,55,49,,,,,
+,,,,,,,,,,זמן מצופה,זמן בפועל
+,,,,,,,,,Mean,60,62.5
+,,,,,,,,,Variance,540,479.5
+,,,,,,,,,Observations,6,6
+,,,,,,,,,Pooled Variance,509.75,
+,,,,,,,,,Hypothesized Mean Difference,0,
+,,,,,,,,,df,10,
+,,,,,,,,,t Stat,-0.19178826,
+,,,,,,,,,P(T<=t) one-tail,0.425873238,
+,,,,,,,,,t Critical one-tail,1.812461123,
+,,,,,,,,,P(T<=t) two-tail,0.851746475,
+,,,,,,,,,t Critical two-tail,2.228138852,

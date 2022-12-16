@@ -1,0 +1,8 @@
+ReadMe Group 16 Arduino 
+
+1. Download the program to the Arduino controller
+2. connect the controller to a voltage of five volts or USB hub.
+3. Place the controller in a room filled with light
+4. The lcd should display the righting “Good Morning”.
+5. Turn of the lights or cover the photoresistor with your hand – the lcd should display the righting “Good Night”, the servo motor should begin operating, the led should be on and the buzzer should play a sound. 
+6. Turn the light back on - all of the actions in 5. should stop and lcd displays "Good Morning".

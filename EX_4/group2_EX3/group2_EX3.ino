@@ -4,9 +4,9 @@
 
 PIDController pid;
 
-float Ki=0.1;
-float Kp=1.2;
-float Kd=0.4;
+float Ki=0.13;
+float Kp=1.05;
+float Kd=0.13;
 
 #define ENCODER_A 2 
 #define ENCODER_B 3 // Encoder output to Arduino Interrupt pin ncoderPinB
@@ -39,7 +39,7 @@ void reverse(){
 
 
 void setup(){
-     Serial.begin(9600); //needed??????????????????
+     Serial.begin(9600); 
 pid.begin(); // Initialize the PID controller
 
 pid.limit(-180, 180); // The PID output can be limited to values between -255 to 255
@@ -76,19 +76,19 @@ if (abs(tick_to_deg1)>15){
 
 
  
-    if (tick_to_deg1<180){// && tick_to_deg1>15){
+    if (tick_to_deg1<0){
         reverse();}
 
     else{forward();}
 
 
-  analogWrite(enA, abs(motor_pwm_value*255*30/360));
+  analogWrite(enA, abs(motor_pwm_value*255*4.1/100));
   
 
   }
 else  {
   analogWrite(enA,0);}
 
- delay(20);
+ delay(50);
   }
 
